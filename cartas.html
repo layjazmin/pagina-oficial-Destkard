@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#071426">
+  <title>DESTKARD | Cartas</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="cartas.css">
+</head>
+
+<body>
+
+  <main class="collection">
+
+<!-- ENCABEZADO -->
+<section class="heading">
+
+<a href="/index.html" class="back-button" aria-label="Volver">
+  <img src="../../img/selector/volver.png" alt="VOLVER">
+</a>
+
+  <img
+    src="../imagenescartas/titulocartas.png"
+    alt="CARTAS"
+    class="title-image">
+
+  <p>Explorá, seleccioná y descubrí tus personajes.</p>
+
+</section>
+    <nav class="rarity-tabs">
+      <button class="rarity-tab active" data-rarity="comun">
+        COMÚN
+      </button>
+
+      <button class="rarity-tab" data-rarity="epico">
+        ÉPICO
+      </button>
+
+      <button class="rarity-tab" data-rarity="legendario">
+       LEGENDARIO
+      </button>
+    </nav>
+
+    <div class="collection-layout">
+
+      <section class="cards-area">
+
+        <div class="section-line">
+          <h2 id="category-title">CARTAS COMUNES</h2>
+          <span id="cards-count">3 CARTAS</span>
+        </div>
+
+        <div class="cards-grid" id="cards-grid"></div>
+
+        <div class="empty-state" id="empty-state" hidden>
+          <span>✦</span>
+          <p>No hay cartas disponibles.</p>
+        </div>
+
+      </section>
+
+      <aside class="detail-panel">
+
+        <div class="detail-topline">
+          <span>VISTA PREVIA</span>
+          <span class="live-dot"></span>
+        </div>
+
+        <div class="featured-card-wrap">
+          <div class="featured-card rarity-comun" id="featured-card">
+
+            <div class="featured-inner">
+              <div class="featured-top">
+                <span class="featured-level" id="detail-level">01</span>
+                <span class="featured-type" id="detail-rarity">COMÚN</span>
+              </div>
+
+              <div class="featured-art">
+                <img
+                  id="detail-image"
+                  src="../imagenescartas/carta-comun-1.png"
+                  alt="Carta seleccionada">
+              </div>
+
+              <div class="featured-bottom">
+                <h2 id="detail-name">Cuchillo</h2>
+
+                <div class="detail-stats">
+                  <span>⚔ <strong id="detail-power">80</strong></span>
+                  <span>◆ <strong id="detail-energy">4</strong></span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="detail-copy">
+
+          <div class="detail-name-row">
+            <h3 id="description-title">Cuchillo</h3>
+            <span class="rarity-pill" id="rarity-pill">COMÚN</span>
+          </div>
+
+          <p id="detail-description">
+            Seleccioná una carta para descubrir su descripción.
+          </p>
+
+          <div class="detail-footer">
+            <span>DESTKARD DATABASE</span>
+            <span id="detail-id">#001</span>
+          </div>
+
+        </div>
+
+      </aside>
+
+    </div>
+
+    <footer class="page-footer">
+      <span></span>
+      DESTKARD COLLECTION
+      <span></span>
+    </footer>
+
+  </main>
+
+  <script src="cartas.js"></script>
+</body>
+</html>
