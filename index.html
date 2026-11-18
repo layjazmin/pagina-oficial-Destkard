@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DESTKARD | Enfrenta, Juega, Compite</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Roboto+Condensed:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header class="navbar">
+
+<a href="#inicio" class="brand">
+    <img src="img/selector/logosuperior.png"
+         class="brand-logo">
+</a>
+    </a>
+
+    <!-- NAVEGACIÓN CENTRAL -->
+    <nav class="top-nav" id="topNav">
+
+        <button class="nav-option" data-panel="creadores">
+            CREADORES
+        </button>
+
+        <button class="nav-option" data-panel="contacto">
+            CONTACTO
+        </button>
+
+        <button class="nav-option" data-panel="reglas">
+            REGLAS
+        </button>
+
+        <button class="nav-option" data-panel="resenas">
+            RESEÑAS
+        </button>
+
+    </nav>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+        ☰
+    </button>
+
+    <!-- BOTÓN ROBLOX CON PNG -->
+    <a href="https://www.roblox.com/"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="roblox-button">
+
+        <img src="img/selector/roblox.png"
+             alt="Jugar en Roblox"
+             class="roblox-image">
+
+    </a>
+
+    <!-- CADENAS DECORATIVAS -->
+    <img src="img/selector/cadena izquierda.png"
+         class="chain-left" alt="">
+
+    <img src="img/selector/cadena derecha.png"
+         class="chain-right" alt="">
+
+</header>
+
+
+<!-- =================================
+     VENTANAS DESPLEGABLES
+================================= -->
+
+<div class="mega-menu" id="megaMenu">
+
+    <button class="mega-close" id="megaClose" aria-label="Cerrar menú">
+        ✕
+    </button>
+
+    <!-- CREADORES -->
+    <section class="mega-panel" id="panel-creadores">
+
+        <h2>NUESTROS CREADORES</h2>
+        <p class="panel-subtitle">EL EQUIPO DETRÁS DE DESTKARD</p>
+
+        <div class="creator-grid">
+
+            <article class="creator-card">
+                <img src="img/selector/creador01.jpeg" alt="Creador 1">
+                <h3>Emiliano</h3>
+                <p>-Diseñador & ilustrador
+                   -Renderizado en blender y animaciones.</p>
+            </article>
+
+            <article class="creator-card">
+                <img src="img/selector/creador02.jpg" alt="Creador 2">
+                <h3>Axel</h3>
+                <p>-Programador del videojuego</p>
+            </article>
+
+            <article class="creator-card">
+                <img src="img/selector/creador03.jpeg" alt="Creador 3">
+                <h3>Jazmín</h3>
+                <p>-Desarolladora de la página web.</p>
+            </article>
+
+        </div>
+
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="mega-panel" id="panel-contacto">
+
+        <h2>CONTACTO</h2>
+        <p class="panel-subtitle">ENCONTRANOS EN NUESTROS INSTAGRAMS</p>
+
+        <div class="info-content">
+                 <p> pereiraaxell </p>
+                 <p> blaylajazmin </p>
+                 <p>emixx_nunez </p>
+            </p>
+        </div>
+
+    </section>
+
+    <!-- REGLAS -->
+    <section class="mega-panel" id="panel-reglas">
+
+        <h2>REGLAS DE DESTKARD</h2>
+        <p class="panel-subtitle">LAS NORMAS QUE TODOS DEBEN RESPETAR</p>
+
+        <div class="info-content">
+            <p>◆ Respetar a los demás jugadores.</p>
+            <p>◆ No utilizar trampas ni exploits.</p>
+            <p>◆ No molestar ni perjudicar a otros usuarios.</p>
+            <p>◆ Disfrutar del juego y respetar la comunidad.</p>
+        </div>
+
+    </section>
+
+    <!-- RESEÑAS -->
+    <section class="mega-panel" id="panel-resenas">
+
+        <h2>RESEÑAS</h2>
+        <p class="panel-subtitle">¿QUÉ OPINAN LOS JUGADORES?</p>
+
+        <div class="info-content">
+            <p>Las opiniones de la comunidad aparecerán aquí.</p>
+            <p>¡Tu experiencia también será importante!</p>
+        </div>
+
+    </section>
+
+</div>
+
+
+<!-- =================================
+     PORTADA PRINCIPAL
+================================= -->
+
+<main>
+
+    <section class="hero" id="inicio">
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+
+            <!-- LOGO -->
+            <div class="logo-container">
+
+                <img src="img/selector/Logo.png"
+                     alt="DESTKARD"
+                     class="main-logo">
+
+            </div>
+            </a>
+
+            <!-- CATEGORÍAS -->
+            <div class="features">
+
+                <!-- PERSONAJES -->
+                <a href="personajes.html"
+                
+                   class="feature-card image-card"
+                   id="irPersonajes">
+
+                    <img src="img/selector/personajes.png"
+                         alt="Personajes"
+                         class="feature-image">
+
+                </a>
+
+                <!-- MAPAS -->
+                <a href="/mapascodigos/mapas.html"
+                   class="feature-card image-card">
+
+                    <img src="img/selector/mapas.png"
+                         alt="Mapas"
+                         class="feature-image">
+
+                </a>
+
+                <!-- CARTAS -->
+                <a href="/cartascodigos/cartulis/cartas.html"
+                   class="feature-card image-card">
+
+                    <img src="img/selector/cartas.png"
+                         alt="Cartas"
+                         class="feature-image">
+
+                </a>
+
+                <!-- JEFES -->
+                <a href="/jefescodigos/jefes.html"
+                   class="feature-card image-card">
+
+                    <img src="img/selector/jefes.png"
+                         alt="Jefes"
+                         class="feature-image">
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =================================
+         SECCIÓN: ¿DE QUÉ TRATA?
+    ================================= -->
+
+    <section class="about-section" id="sobre-destkard">
+
+        <div class="about-container">
+
+            <div class="about-title">
+                <h2>¿DE QUÉ<br>TRATA?</h2>
+            </div>
+
+            <div class="about-description">
+                <p>
+                    DESTKARD Un juego inspirado en el estilo de Outlaws, pero que incorpora mecánicas mejoradas y una propuesta de juego más enfocada en la cooperación y el trabajo en equipo. Los jugadores deberán colaborar, aprovechar las habilidades de sus personajes y coordinar sus estrategias para superar los distintos desafíos que presenta cada partida.
+
+                    El juego cuenta con 4 competidores, cada uno con características y habilidades propias que aportan diferentes posibilidades al enfrentamiento, y 3 jefes, que representan desafíos especiales y requieren estrategias de equipo para poder ser derrotados.
+ 
+                </p>
+
+                    <p> Su propuesta combina acción, estrategia y cooperación, buscando que cada personaje tenga un papel importante dentro del equipo y que la coordinación entre los jugadores sea fundamental para alcanzar la victoria.
+            
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+</main>
+
+<!-- ASISTENTES DE BIENVENIDA DESTKARD -->
+
+<!-- FIGHT -->
+
+<div class="asistente-destkard" id="asistenteFight">
+
+    <img src="img/selector/fightdialogo.png"
+         alt="Fight">
+
+    <div class="globo-dialogo">
+
+        <button type="button" class="cerrarDialogo" id="cerrarFight">×</button>
+
+        <h3>✦ ¡BIENVENIDO! ✦</h3>
+
+        <p id="textoFight"></p>
+
+    </div>
+
+</div>
+
+<!-- NEON -->
+
+<div class="asistente-destkard derecha" id="asistenteNeon">
+
+    <img src="img/selector/neondialogo.png"
+         alt="Neon">
+
+    <div class="globo-dialogo">
+
+        <button type="button" class="cerrarDialogo" id="cerrarNeon">×</button>
+
+        <h3> ¡EXPLORÁ DESTKARD! </h3>
+
+        <p id="textoNeon"></p>
+
+    </div>
+
+</div>
+
+<button class="dialogo-reabrir" id="reabrirDialogo">
+    ¿NECESITÁS AYUDA?
+</button>
+
+    <script src="script.js"></script>

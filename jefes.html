@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selección de Jefes | DESTKARD</title>
+    <link rel="stylesheet" href="jefes.css">
+</head>
+
+<body>
+
+    <!-- BOTÓN VOLVER -->
+    <a href="../index.html" class="boton-volver">
+        <img src="../img/selector/volver.png" alt="Volver al inicio">
+    </a>
+
+    <main class="selector">
+
+        <div class="escenario">
+
+            <!-- PANTALLA INTERIOR -->
+            <div class="pantalla">
+
+                <!-- FONDO DINÁMICO -->
+                <img
+                    src="../img/jefes/fondojefe1.png"
+                    class="fondo-pantalla"
+                    id="fondoJefe"
+                    alt=""
+                >
+
+                <!-- CAPA OSCURA -->
+                <div class="capa-fondo"></div>
+
+                <!-- IMAGEN LATERAL IZQUIERDA -->
+                <img
+                    src="../img/jefes/jefe1izquierda.png"
+                    class="imagen-lateral izquierda"
+                    id="imagenIzquierda"
+                    alt=""
+                >
+
+                <!-- IMAGEN LATERAL DERECHA -->
+                <img
+                    src="../img/jefes/jefe1derecha.png"
+                    class="imagen-lateral derecha"
+                    id="imagenDerecha"
+                    alt=""
+                >
+
+                <!-- ÚNICA CASILLA CENTRAL -->
+                <div class="casilla central" id="casillaCentral">
+
+                    <!-- FLECHA SUPERIOR -->
+                    <button
+                        class="flecha arriba"
+                        data-direccion="-1"
+                        aria-label="Jefe anterior"
+                    >
+                        <img src="../img/jefes/flechaarriba.png" alt="">
+                    </button>
+
+                    <!-- MARCO -->
+                    <img
+                        src="../img/jefes/botonjefe.png"
+                        class="marco"
+                        alt=""
+                    >
+
+                    <!-- ICONO DEL JEFE -->
+                    <img
+                        src="../img/jefes/iconojefe1.png"
+                        class="icono"
+                        id="iconoCentral"
+                        alt="Jefe seleccionado"
+                    >
+
+                    <!-- BOTÓN CONFIRMAR -->
+                    <button
+                        class="boton-seleccionar"
+                        id="botonSeleccionar"
+                        aria-label="Confirmar jefe seleccionado"
+                    >
+                        <img
+                            src="../img/selector/seleccionar.png"
+                            alt=""
+                        >
+                    </button>
+
+                    <!-- FLECHA INFERIOR -->
+                    <button
+                        class="flecha abajo"
+                        data-direccion="1"
+                        aria-label="Siguiente jefe"
+                    >
+                        <img src="../img/jefes/flechaabajo.png" alt="">
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- CARCASA DEL TELEVISOR -->
+            <img
+                src="../img/selector/Interfazpersonajes.png"
+                class="carcasa"
+                alt=""
+            >
+
+        </div>
+
+    </main>
+
+    </div>
+
+    <script src="jefes.js"></script>
+
+</body>
+</html>

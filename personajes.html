@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Selección de Personajes</title>
+
+    <link rel="stylesheet" href="personajes.css">
+</head>
+
+<body>
+
+    <!-- BOTÓN VOLVER -->
+    <a href="/index.html" class="boton-volver">
+        <img src="img/selector/volver.png" alt="Volver">
+    </a>
+
+    <main class="selector" role="main">
+
+        <div class="escenario">
+
+            <!-- PANTALLA INTERIOR -->
+            <div class="pantalla">
+
+                <img
+                    src="img/selector/fondointerfazpersonajes.jpg"
+                    class="fondo-pantalla"
+                    alt=""
+                    aria-hidden="true"
+                >
+
+                <!-- PERSONAJE IZQUIERDO -->
+                <div
+                    class="casilla lateral izquierda"
+                    id="casillaIzquierda"
+                    aria-hidden="true"
+                >
+                    <img
+                        src="img/selector/marcoindividual.png"
+                        class="marco"
+                        alt=""
+                    >
+
+                    <img
+                        src=""
+                        class="icono"
+                        id="iconoIzquierda"
+                        alt="Personaje anterior"
+                    >
+                </div>
+
+                <!-- PERSONAJE CENTRAL -->
+                <div class="casilla central" id="casillaCentral">
+
+                    <img
+                        src="img/selector/marcoindividual.png"
+                        class="marco"
+                        alt=""
+                    >
+
+                    <img
+                        src=""
+                        class="personaje"
+                        id="imagenCentral"
+                        alt="Personaje seleccionado"
+                    >
+
+                    <div class="datos-personaje">
+
+                        <span id="numeroPersonaje">01</span>
+
+                        <h2 id="nombrePersonaje">
+                            PERSONAJE 1
+                        </h2>
+
+                    </div>
+
+                    <!-- BOTÓN SELECCIONAR -->
+                    <button
+                        class="boton-seleccionar"
+                        id="botonSeleccionar"
+                        aria-label="Confirmar selección de personaje"
+                    >
+                        <img
+                            src="img/selector/seleccionar.png"
+                            alt=""
+                        >
+                    </button>
+
+                </div>
+
+                <!-- PERSONAJE DERECHO -->
+                <div
+                    class="casilla lateral derecha"
+                    id="casillaDerecha"
+                    aria-hidden="true"
+                >
+
+                    <img
+                        src="img/selector/marcoindividual.png"
+                        class="marco"
+                        alt=""
+                    >
+
+                    <img
+                        src=""
+                        class="icono"
+                        id="iconoDerecha"
+                        alt="Siguiente personaje"
+                    >
+
+                </div>
+
+                <!-- FLECHA IZQUIERDA -->
+                <button
+                    class="flecha flecha-izquierda"
+                    id="anterior"
+                    aria-label="Ver personaje anterior"
+                >
+                    <img
+                        src="img/selector/flechaizq.png"
+                        alt=""
+                    >
+                </button>
+
+                <!-- FLECHA DERECHA -->
+                <button
+                    class="flecha flecha-derecha"
+                    id="siguiente"
+                    aria-label="Ver personaje siguiente"
+                >
+                    <img
+                        src="img/selector/flechaderecha.png"
+                        alt=""
+                    >
+                </button>
+
+                <!-- ESTADO -->
+                <p
+                    class="estado"
+                    id="estado"
+                    aria-live="polite"
+                >
+                    SELECCIONÁ TU PERSONAJE
+                </p>
+
+            </div>
+
+            <!-- CARCASA DEL TELEVISOR -->
+            <img
+                src="img/selector/Interfazpersonajes.png"
+                class="carcasa"
+                alt=""
+                aria-hidden="true"
+            >
+
+        </div>
+
+    </main>
+
+    </div>
+
+    <!-- PRESENTACIÓN DE PERSONAJES -->
+
+<!-- SHADER -->
+<div class="asistente-destkard" id="asistenteShader">
+
+    <img src="img/selector/shaderdialogo.png" alt="Shader">
+
+    <div class="globo-dialogo">
+        <button type="button" class="cerrarDialogo" id="cerrarShader">×</button>
+
+        <h3>¡BIENVENIDO!</h3>
+        <p id="textoShader"></p>
+    </div>
+
+</div>
+
+<!-- NOVA -->
+<div class="asistente-destkard derecha oculto" id="asistenteNova">
+
+    <img src="img/selector/novadialogo.png" alt="Nova">
+
+    <div class="globo-dialogo">
+        <button type="button" class="cerrarDialogo" id="cerrarNova">×</button>
+
+        <h3>✦ ¡TE EXPLICAMOS! ✦</h3>
+        <p id="textoNova"></p>
+    </div>
+
+</div>
+
+<button class="dialogo-reabrir" id="reabrirDialogo">
+    ¿NECESITÁS AYUDA?
+</button>
+
+    <!-- JAVASCRIPT -->
+    <script src="personajes.js"></script>
+
+</body>
+
+</html>

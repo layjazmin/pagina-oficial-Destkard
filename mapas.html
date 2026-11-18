@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DESTKARD | Mapas</title>
+
+    <link rel="stylesheet" href="mapas.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Roboto+Condensed:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="fondo-decorativo"></div>
+ 
+    <header class="navbar">
+    </header>
+
+
+    <!-- CONTENIDO PRINCIPAL -->
+
+    <main class="contenedor">
+
+        <section class="mapa-principal">
+
+            <!-- GALERÍA -->
+
+            <div class="galeria">
+
+                <div class="imagen-contenedor">
+
+                    <img
+                        src="../img/mapas/lobby1.jpg"
+                        alt="Imagen del mapa"
+                        id="imagenPrincipal"
+                    >
+
+                    <img
+                        src="../img/mapas/ruidoblanco.jfif"
+                        alt=""
+                        class="ruido-transicion"
+                        id="ruidoTransicion"
+                    >
+
+                    <!-- MARCO DECORATIVO DEL MAPA -->
+
+                   <img
+                       src="../img/mapas/marcomapa.png"
+                       alt=""
+                       class="marco-mapa"
+>
+
+                    <button class="flecha flecha-izquierda" id="anterior">
+                        ❮
+                    </button>
+
+                    <button class="flecha flecha-derecha" id="siguiente">
+                        ❯
+                    </button>
+
+                    <div class="contador" id="contador">
+                        1 / 5
+                    </div>
+
+                </div>
+
+
+                <!-- MINIATURAS DEL LOBBY -->
+
+                <div class="miniaturas" id="miniaturas">
+
+                    <button class="miniatura activa" data-indice="0">
+                        <img src="../img/mapas/lobby1.jpg" alt="Lobby imagen 1">
+                        <span>1 / 5</span>
+                    </button>
+
+                    <button class="miniatura" data-indice="1">
+                        <img src="../img/mapas/lobby2.jpg" alt="Lobby imagen 2">
+                        <span>2 / 5</span>
+                    </button>
+
+                    <button class="miniatura" data-indice="2">
+                        <img src="../img/mapas/lobby3.jpg" alt="Lobby imagen 3">
+                        <span>3 / 5</span>
+                    </button>
+
+                    <button class="miniatura" data-indice="3">
+                        <img src="../img/mapas/lobby4.jpg" alt="Lobby imagen 4">
+                        <span>4 / 5</span>
+                    </button>
+
+                    <button class="miniatura" data-indice="4">
+                        <img src="../img/mapas/lobby5.jpg" alt="Lobby imagen 5">
+                        <span>5 / 5</span>
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- INFORMACIÓN DEL MAPA -->
+
+            <aside class="informacion">
+
+                <img
+                    src="../img/mapas/mapa01.png"
+                    id="nombreMapa"
+                    class="nombre-mapa-imagen"
+                    alt="Título del mapa"
+                >
+
+                <div class="linea-violeta"></div>
+
+                <<!-- CUADRO GLASSMORPHISM -->
+
+<div class="panel-informacion">
+
+    <p id="descripcionMapa">
+        El punto de encuentro de todos los jugadores.
+        Explorá el entorno, preparate para la partida
+        y descubrí cada rincón de este lugar.
+    </p>
+
+    <div class="caracteristicas">
+
+        <div class="caracteristica">
+            <span class="icono">⌖</span>
+            <span class="titulo-caracteristica">Tipo</span>
+            <span id="tipoMapa">Principal</span>
+        </div>
+
+        <div class="caracteristica">
+            <span class="icono">▱</span>
+            <span class="titulo-caracteristica">Tamaño</span>
+            <span id="tamanoMapa">Grande</span>
+        </div>
+
+        <div class="caracteristica">
+            <span class="icono">☼</span>
+            <span class="titulo-caracteristica">Ambiente</span>
+            <span id="ambienteMapa">Variable</span>
+        </div>
+
+    </div>
+
+</div>
+                <div class="decoracion-corona">♛</div>
+
+                <a href="../index.html" class="boton-volver">
+                    <img src="../img/selector/volver.png" alt="Volver">
+                </a>
+
+            </aside>
+
+        </section>
+
+
+        <!-- OTROS MAPAS -->
+
+        <section class="otros-mapas">
+
+            <div class="titulo-seccion">
+
+                <h2>ZONAS</h2>
+
+                <div class="controles-mapas">
+                    <button id="mapaAnterior">❮</button>
+                    <button id="mapaSiguiente">❯</button>
+                </div>
+
+            </div>
+
+            <div class="tarjetas-mapas" id="tarjetasMapas">
+
+                <!-- SE GENERAN AUTOMÁTICAMENTE -->
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="mapas.js"></script>
+
+</body>
+</html>

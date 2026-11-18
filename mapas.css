@@ -1,0 +1,957 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --fondo: #090711;
+    --panel: #100d1b;
+    --violeta: #7928ff;
+    --violeta-claro: #a45cff;
+    --texto: #f4f0ff;
+    --texto-secundario: #aaa3c4;
+}
+
+body {
+    background-image: url("../img/mapas/fondo.png");
+    background-size: 100% auto;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* NAVEGACIÓN */
+
+.navbar {
+    height: 65px;
+    width: 100%;
+    padding: 0 5%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-image: url("../img/mapas/fuego.png");
+    background-size: 100% auto;
+    background-position: center 1%;
+    background-repeat: no-repeat;
+
+    border-bottom: none;
+    position: relative;
+    z-index: 10;
+}
+
+.logo {
+    color: white;
+    font-family: 'Bangers', cursive;
+    font-size: 30px;
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: var(--violeta);
+    font-size: 25px;
+}
+
+.nav-links {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    gap: 45px;
+}
+
+.nav-links a {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #aaa5c5;
+    font-size: 16px;
+    font-weight: 700;
+    transition: .3s;
+    border-bottom: 3px solid transparent;
+}
+
+.nav-links a:hover,
+.nav-links a.activo {
+    color: var(--violeta-claro);
+    border-bottom-color: var(--violeta);
+}
+
+.nav-iconos {
+    display: flex;
+    gap: 25px;
+    font-size: 26px;
+    color: #aaa5c5;
+}
+
+/* CONTENEDOR */
+
+.contenedor {
+    width: 90%;
+    max-width: 1900px;
+    margin: 50px auto;
+}
+
+/* MAPA PRINCIPAL */
+
+.mapa-principal {
+    display: grid;
+    grid-template-columns: minmax(0, 2.1fr) minmax(280px, .85fr);
+    gap: 50px;
+    align-items: start;
+}
+
+/* GALERÍA */
+
+.galeria {
+    width: 100%;
+    min-width: 0;
+}
+
+.imagen-contenedor {
+    width: 100%;
+    height: 535px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #171321;
+}
+
+.imagen-contenedor > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: opacity .2s;
+}
+
+/* FLECHAS */
+
+.flecha {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 58px;
+    height: 58px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(8,6,17,.85);
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.flecha:hover {
+    background: var(--violeta);
+    box-shadow: 0 0 20px rgba(121,40,255,.6);
+}
+
+.flecha-izquierda {
+    left: 18px;
+}
+
+.flecha-derecha {
+    right: 18px;
+}
+
+/* CONTADOR */
+
+.contador {
+    position: absolute;
+    bottom: 18px;
+    left: 18px;
+    padding: 8px 13px;
+    border-radius: 7px;
+    background: rgba(8,6,17,.85);
+    font-size: 15px;
+}
+
+/* MINIATURAS */
+
+.miniaturas {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.miniatura {
+    height: 110px;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid transparent;
+    border-radius: 7px;
+    padding: 0;
+    background: #171321;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.miniatura img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.miniatura span {
+    position: absolute;
+    bottom: 7px;
+    left: 7px;
+    padding: 4px 7px;
+    color: white;
+    background: rgba(0,0,0,.8);
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.miniatura:hover {
+    border-color: var(--violeta-claro);
+}
+
+.miniatura.activa {
+    border-color: var(--violeta);
+    box-shadow: 0 0 12px rgba(121,40,255,.5);
+}
+
+/* INFORMACIÓN */
+
+.informacion {
+    padding-top: 5px;
+    position: relative;
+    min-height: 550px;
+}
+
+.etiqueta {
+    color: var(--violeta-claro);
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.informacion h1 {
+    font-size: clamp(35px, 4vw, 55px);
+    margin-top: 12px;
+    font-weight: 800;
+}
+
+.linea-violeta {
+    width: 120px;
+    height: 4px;
+    background: var(--violeta);
+
+    margin: 23px auto;
+
+    position: relative;
+    top: 20px;
+
+}
+
+.informacion p {
+    color: #ffffff;
+    font-size: 19px;
+    line-height: 1.65;
+    max-width: 440px;
+}
+
+.caracteristicas {
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+    margin-top: 55px;
+}
+
+.caracteristica {
+    display: grid;
+    grid-template-columns: 30px 1fr 1fr;
+    align-items: center;
+    gap: 10px;
+    font-size: 17px;
+}
+
+.icono {
+    color: #a99bdf;
+    font-size: 24px;
+}
+
+.titulo-caracteristica {
+    color: #ffffff;
+}
+
+/* VALORES DE LAS CARACTERÍSTICAS */
+
+.caracteristica > span:last-child {
+    color: #ffffff;
+}
+
+.decoracion-corona {
+    color: #7021e9;
+    font-size: 85px;
+    text-align: right;
+    margin-top: 35px;
+    opacity: .75;
+}
+
+/* OTROS MAPAS */
+
+.otros-mapas {
+    border-top: 1px solid rgba(255,255,255,.1);
+    margin-top: 15x;
+    padding-top: 10px;
+}
+
+.titulo-seccion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.titulo-seccion h2 {
+    color: var(--violeta-claro);
+    font-size: 21px;
+}
+
+.controles-mapas {
+    display: flex;
+    gap: 5px;
+}
+
+.controles-mapas button {
+    width: 42px;
+    height: 40px;
+    border: 1px solid #342b48;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    font-size: 17px;
+    transition: .3s;
+}
+
+.controles-mapas button:hover {
+    background: var(--violeta);
+}
+
+/* TARJETAS */
+
+.tarjetas-mapas {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.tarjeta-mapa {
+    position: relative;
+    height: 190px;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,.08);
+    cursor: pointer;
+    background: #171321;
+}
+
+.tarjeta-mapa img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .4s;
+}
+
+.tarjeta-mapa:hover img {
+    transform: scale(1.08);
+}
+
+.tarjeta-mapa::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(transparent, #9b5aacf2);
+}
+
+.tarjeta-mapa h3 {
+    position: absolute;
+    z-index: 2;
+    bottom: 18px;
+    left: 18px;
+    font-size: 23px;
+    color: white;
+}
+
+.tarjeta-mapa.seleccionada {
+    border: 2px solid var(--violeta);
+    box-shadow: 0 0 15px rgba(121,40,255,.4);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 950px) {
+
+    .nav-links {
+        gap: 18px;
+    }
+
+    .mapa-principal {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .imagen-contenedor {
+        height: 450px;
+    }
+
+    .informacion {
+        min-height: auto;
+    }
+
+    .decoracion-corona {
+        display: none;
+    }
+
+    .tarjetas-mapas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+
+    .navbar {
+        height: 70px;
+        padding: 0 5%;
+    }
+
+    .logo {
+        font-size: 23px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .contenedor {
+        width: 92%;
+        margin: 30px auto;
+    }
+
+    .imagen-contenedor {
+        height: 270px;
+    }
+
+    .flecha {
+        width: 42px;
+        height: 42px;
+        font-size: 18px;
+    }
+
+    .miniaturas {
+        gap: 7px;
+        margin-top: 15px;
+    }
+
+    .miniatura {
+        height: 65px;
+    }
+
+    .miniatura span {
+        font-size: 9px;
+        left: 3px;
+        bottom: 3px;
+    }
+
+    .informacion h1 {
+        font-size: 36px;
+    }
+
+    .informacion p {
+        font-size: 16px;
+    }
+
+    .caracteristicas {
+        margin-top: 30px;
+    }
+
+    .tarjetas-mapas {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .tarjeta-mapa {
+        height: 125px;
+    }
+
+    .tarjeta-mapa h3 {
+        font-size: 17px;
+        left: 10px;
+        bottom: 20px;
+    }
+}
+
+.boton-volver {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    position: relative;
+    left: -25px;
+    top: -130px;
+    transition: transform .3s ease, filter .3s ease;
+}
+
+.boton-volver img {
+    width: 150px;
+    height: auto;
+    object-fit: contain;
+    position: relative;
+    left: 20px
+
+}
+
+.boton-volver:hover {
+    transform: scale(1.08);
+    filter: drop-shadow(0 0 12px #a45cff);
+}
+
+.boton-volver:active {
+    transform: scale(.95);
+}
+
+/* =================================
+   ANIMACIONES DE LA GALERÍA
+================================= */
+
+/* IMAGEN PRINCIPAL */
+
+.imagen-contenedor > img {
+    will-change: transform, opacity;
+}
+
+.imagen-contenedor > img.entra-derecha {
+    animation: entrarDesdeDerecha .55s ease both;
+}
+
+.imagen-contenedor > img.entra-izquierda {
+    animation: entrarDesdeIzquierda .55s ease both;
+}
+
+@keyframes entrarDesdeDerecha {
+    from {
+        opacity: 0;
+        transform: translateX(65px) scale(1.06);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+@keyframes entrarDesdeIzquierda {
+    from {
+        opacity: 0;
+        transform: translateX(-65px) scale(1.06);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+
+/* INFORMACIÓN DEL MAPA */
+
+.informacion.animar-info #nombreMapa {
+    animation: aparecerInfo .45s ease both;
+}
+
+.informacion.animar-info #descripcionMapa {
+    animation: aparecerInfo .55s ease .08s both;
+}
+
+.informacion.animar-info .linea-violeta {
+    animation: crecerLinea .5s ease both;
+}
+
+.informacion.animar-info .caracteristica:nth-child(1) {
+    animation: aparecerInfo .45s ease .12s both;
+}
+
+.informacion.animar-info .caracteristica:nth-child(2) {
+    animation: aparecerInfo .45s ease .22s both;
+}
+
+.informacion.animar-info .caracteristica:nth-child(3) {
+    animation: aparecerInfo .45s ease .32s both;
+}
+
+@keyframes aparecerInfo {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes crecerLinea {
+    from {
+        opacity: 0;
+        transform: scaleX(0);
+        transform-origin: left;
+    }
+
+    to {
+        opacity: 1;
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+}
+
+
+/* FLECHAS PRINCIPALES */
+
+.flecha:hover {
+    transform: translateY(-50%) scale(1.12);
+}
+
+.flecha:active {
+    transform: translateY(-50%) scale(.88);
+}
+
+
+/* MINIATURAS */
+
+.miniatura {
+    transition: transform .3s ease, border-color .3s ease,
+                box-shadow .3s ease;
+}
+
+.miniatura:hover {
+    transform: translateY(-5px) scale(1.03);
+}
+
+.miniatura.activa {
+    transform: scale(1.04);
+}
+
+
+/* TARJETAS DE OTROS MAPAS */
+
+.tarjeta-mapa {
+    transition: transform .3s ease, border-color .3s ease,
+                box-shadow .3s ease;
+}
+
+.tarjeta-mapa:hover {
+    transform: translateY(-6px);
+}
+
+.tarjeta-mapa:active {
+    transform: scale(.97);
+}
+
+
+/* FLECHAS DE OTROS MAPAS */
+
+.controles-mapas button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 12px rgb(255, 255, 255);
+}
+
+.controles-mapas button:active {
+    transform: scale(.9);
+}
+
+
+/* ACCESIBILIDAD: REDUCIR MOVIMIENTO */
+
+@media (prefers-reduced-motion: reduce) {
+    .imagen-contenedor > img,
+    .informacion.animar-info *,
+    .miniatura,
+    .tarjeta-mapa,
+    .flecha,
+    .controles-mapas button {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* RUIDO BLANCO */
+
+.ruido-transicion {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 10;
+    opacity: 0;
+    display: none;
+    pointer-events: none;
+    filter: grayscale(1) contrast(1.8) brightness(1.2);
+}
+
+.ruido-transicion.activo {
+    display: block;
+    animation: interferencia .3s steps(2, end) both;
+}
+
+@keyframes interferencia {
+
+    0% {
+        opacity: 1;
+        transform: translate(0, 0);
+        filter: grayscale(1) contrast(2.5) brightness(1.5);
+    }
+
+    10% {
+        opacity: .7;
+        transform: translate( 0px, 0px);
+        filter: grayscale(1) contrast(4) brightness(2);
+    }
+
+    20% {
+        opacity: 1;
+        transform: translate(4px, -3px);
+        filter: grayscale(1) contrast(3) brightness(.8);
+    }
+
+    30% {
+        opacity: .5;
+        transform: translate(-3px, 4px);
+        filter: grayscale(1) contrast(5) brightness(2);
+    }
+
+    40% {
+        opacity: 1;
+        transform: translate(5px, 0);
+        filter: grayscale(1) contrast(3.5) brightness(1.5);
+    }
+
+    50% {
+        opacity: .6;
+        transform: translate(-4px, -2px);
+        filter: grayscale(1) contrast(5) brightness(.7);
+    }
+
+    60% {
+        opacity: 1;
+        transform: translate(2px, 3px);
+        filter: grayscale(1) contrast(4) brightness(2);
+    }
+
+    75% {
+        opacity: .4;
+        transform: translate(-2px, 0);
+    }
+
+    85% {
+        opacity: 1;
+        transform: translate(3px, -3px);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(0, 0);
+    }
+}
+
+.nombre-mapa-imagen {
+    width: 300px;
+    height: 100px;
+    object-fit: contain;
+    object-position: left center;
+    position: relative;
+    top: 50px;
+    left: 25px
+    
+}
+
+/* =================================
+   MARCO DECORATIVO DEL MAPA
+================================= */
+
+.marco-mapa {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: fill;
+
+    z-index: 10;
+
+    pointer-events: none;
+}
+
+/* RUIDO BLANCO */
+
+.ruido-transicion {
+    z-index: 5;
+}
+
+/* BOTONES Y CONTADOR */
+
+.flecha {
+    z-index: 11;
+}
+
+.contador {
+    z-index: 11;
+}
+
+/* =================================
+   AJUSTAR FOTOGRAFÍA A LA PANTALLA
+================================= */
+
+#imagenPrincipal {
+    position: absolute;
+
+    left: 21%;
+    top: 23%;
+
+    width: 61%;
+    height: 62%;
+
+    object-fit: cover;
+
+    z-index: 2;
+}
+
+/* RUIDO BLANCO DENTRO DE LA PANTALLA */
+
+.ruido-transicion {
+    left: 21%;
+    top: 23%;
+
+    width: 61%;
+    height: 62%;
+
+    right: auto;
+    bottom: auto;
+
+    z-index: 5;
+}
+
+/* MARCO POR ENCIMA DE TODO */
+
+.marco-mapa {
+    z-index: 10;
+}
+/* ELIMINAR FONDO DETRÁS DEL MARCO */
+
+.imagen-contenedor {
+    background: transparent;
+}
+
+/* =================================
+   ENCUADRAR RUIDO BLANCO EN LA TELE
+================================= */
+
+#ruidoTransicion {
+    position: absolute !important;
+
+    left: 21% !important;
+    top: 23% !important;
+
+    width: 61% !important;
+    height: 62% !important;
+
+    right: auto !important;
+    bottom: auto !important;
+
+    object-fit: cover;
+
+    z-index: 5;
+    pointer-events: none;
+}
+
+/* =================================
+   PANEL GLASSMORPHISM
+================================= */
+
+.panel-informacion {
+
+    width: 100%;
+
+    padding: 25px;
+
+    background: rgba(15, 12, 30, 0.65);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    border-left: 4px solid #a45cff;
+
+    border-radius: 8px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+
+}
+
+/* DESCRIPCIÓN */
+
+.panel-informacion p {
+
+    color: #ffffff;
+
+    font-size: 19px;
+
+    line-height: 1.65;
+
+    max-width: 100%;
+
+}
+
+/* CARACTERÍSTICAS */
+
+.panel-informacion .caracteristicas {
+
+    margin-top: 35px;
+
+    gap: 25px;
+
+}
+
+/* TEXTOS BLANCOS */
+
+.panel-informacion .titulo-caracteristica,
+.panel-informacion .caracteristica > span:last-child {
+
+    color: #ffffff;
+
+}
+
+/* ICONOS */
+
+.panel-informacion .icono {
+
+    color: #c18aff;
+
+}
+
+/* LOGO CENTRAL SUPERPUESTO */
+
+.logo-central {
+    position: fixed !important;
+
+    top: 55px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    height: 65px;
+    width: auto;
+
+    object-fit: contain;
+
+    z-index: 99999;
+    pointer-events: none;
+}

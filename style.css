@@ -1,0 +1,1339 @@
+/* =================================
+   CONFIGURACIÓN GENERAL
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #08030e;
+    color: white;
+    font-family: 'Chiller', fantasy;
+    overflow-x: hidden;
+}
+
+/* =================================
+   BARRA DE NAVEGACIÓN
+================================= */
+
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 72px;
+    z-index: 20;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 6%;
+
+    background: rgba(5, 2, 12, 0.94);
+    border-bottom: 3px solid #a900ff;
+    box-shadow: 0 5px 25px rgba(174, 0, 255, 0.35);
+
+    overflow: visible;
+}
+
+/* LOGO DE NAVEGACIÓN */
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: #d83cff;
+    text-decoration: none;
+
+    font-family: 'Chiller', fantasy;
+    font-size: 30px;
+    letter-spacing: 1px;
+
+    text-shadow: 2px 2px #42006d;
+    z-index: 5;
+}
+
+.brand-logo {
+    width: 140px;
+    height: 100px;
+    object-fit: contain;
+    display: block;
+
+    transform: translate(-50px, 5px);
+}
+
+/* ENLACES */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 900;
+
+    transition: 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #e82aff;
+    border-bottom: 3px solid #e82aff;
+    padding-bottom: 8px;
+    text-shadow: 0 0 12px #db00ff;
+}
+
+/* ROBLOX */
+
+.roblox-button {
+    position: absolute;
+    right: 4%;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 130px;
+    height: 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+    background: transparent;
+    border: none;
+
+    z-index: 6;
+    transition: 0.3s;
+}
+
+.roblox-image {
+    width: 220%;
+    height: 220%;
+    object-fit: contain;
+    display: block;
+}
+
+.roblox-button:hover {
+    transform: translateY(-50%) scale(1.08);
+}
+
+/* MENÚ MÓVIL */
+
+.menu-toggle {
+    display: none;
+    color: white;
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* =================================
+   CADENAS DECORATIVAS
+================================= */
+
+.chain-left,
+.chain-right {
+    position: absolute;
+    top: 8px;
+
+    width: 30vw;
+    height: auto;
+
+    object-fit: contain;
+
+    z-index: 4;
+    pointer-events: none;
+    user-select: none;
+
+    transform: scaleY(0.75);
+    transform-origin: top center;
+}
+
+.chain-left {
+    left: -12%;
+}
+
+.chain-right {
+    right: -7%;
+}
+
+/* =================================
+   PORTADA PRINCIPAL
+================================= */
+
+.hero {
+    position: relative;
+
+    min-height: 100vh;
+    height: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-image:
+        linear-gradient(
+            to bottom,
+            rgba(5, 0, 15, 0.25),
+            rgba(8, 0, 18, 0.55)
+        ),
+        url("img/selector/Fondo1.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            transparent 20%,
+            rgba(12, 0, 22, 0.38) 100%
+        );
+
+    pointer-events: none;
+}
+
+.hero-content {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 85px 20px 30px;
+}
+
+/* =================================
+   LOGO PRINCIPAL
+================================= */
+
+.logo-container {
+    width: min(700px, 75vw);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 0;
+}
+
+.main-logo {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+
+    filter:
+        drop-shadow(0 0 15px #a500ff)
+        drop-shadow(0 8px 5px rgba(0, 0, 0, 0.8));
+
+    animation: logoFloat 4s ease-in-out infinite;
+}
+
+@keyframes logoFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+/* =================================
+   FRASE PRINCIPAL
+================================= */
+
+.tagline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+
+    color: white;
+    font-family: 'Chiller', fantasy;
+    font-size: 25px;
+    letter-spacing: 2px;
+
+    text-shadow: 0 0 10px #c500ff;
+    margin-top: -5px;
+}
+
+.tagline b {
+    color: #e600ff;
+    font-size: 17px;
+}
+
+.tagline span {
+    color: #e000ff;
+    font-size: 30px;
+}
+
+/* =================================
+   BOTÓN JUGAR
+================================= */
+
+.play-button {
+    margin-top: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 17px 42px;
+
+    background: linear-gradient(135deg, #a000e9, #ed20ff);
+    color: white;
+    text-decoration: none;
+
+    font-family: 'Chiller', fantasy;
+    font-size: 32px;
+    letter-spacing: 2px;
+
+    border: 4px solid white;
+    outline: 3px solid #a000ff;
+
+    clip-path: polygon(
+        5% 0, 95% 0,
+        100% 18%, 96% 50%,
+        100% 82%, 95% 100%,
+        5% 100%, 0 82%,
+        4% 50%, 0 18%
+    );
+
+    transition: 0.3s;
+}
+
+.play-button:hover {
+    transform: scale(1.1);
+    filter: brightness(1.3);
+    box-shadow: 0 0 35px #dc00ff;
+}
+
+/* =================================
+   TEXTOS LATERALES
+================================= */
+
+.side-text {
+    position: absolute;
+    top: 44%;
+    z-index: 2;
+
+    color: #ed39ff;
+    font-family: 'Chiller', fantasy;
+    font-size: 23px;
+    line-height: 1.3;
+    letter-spacing: 1px;
+
+    text-shadow: 0 0 12px #c000ff;
+}
+
+.side-text span {
+    display: block;
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.side-left {
+    left: 5%;
+    text-align: center;
+    transform: rotate(-8deg);
+}
+
+.side-right {
+    right: 5%;
+    text-align: center;
+    transform: rotate(8deg);
+}
+
+/* =================================
+   ÍCONOS PRINCIPALES
+================================= */
+
+.features {
+    width: min(1250px, 95%);
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    align-items: center;
+    justify-items: center;
+
+    gap: 15px;
+
+    margin: 0 auto;
+}
+
+.feature-card {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 5px;
+
+    background: transparent;
+    border: none;
+
+    text-decoration: none;
+
+    transition: transform 0.3s ease;
+}
+
+/* IMÁGENES */
+
+.feature-card img {
+    width: 250px;
+    height: 250px;
+
+    object-fit: contain;
+
+    transition: 0.3s;
+}
+
+/* TAMAÑOS INDIVIDUALES DE LOS ICONOS */
+
+.features .feature-card:nth-child(1) img {
+    width: 300px;
+}
+
+.features .feature-card:nth-child(2) img {
+    width: 200px;
+}
+
+.features .feature-card:nth-child(3) img {
+    width: 300px;
+}
+
+.features .feature-card:nth-child(4) img {
+    width: 220px;
+}
+
+.feature-card:hover {
+    transform: translateY(-6px);
+}
+
+.feature-card:hover img {
+    transform: scale(1.08);
+    filter: drop-shadow(0 0 8px #a900ff);
+}
+
+/* TEXTOS DE LOS ÍCONOS */
+
+.feature-card span {
+    font-family: 'Chiller', fantasy;
+    font-size: 19px;
+    letter-spacing: 1px;
+}
+
+/* =================================
+   CRÉDITOS
+================================= */
+
+.creator-credit {
+    color: white;
+    font-family: 'Bangers', cursive;
+    font-size: 21px;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px #a900ff;
+}
+
+.creator-credit span {
+    color: #e82aff;
+}
+
+/* =================================
+   SECCIONES INFERIORES
+================================= */
+
+.extra-section {
+    min-height: 280px;
+    padding: 90px 20px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #10031c,
+            #210038,
+            #09010f
+        );
+
+    border-bottom: 2px solid #8e00d1;
+}
+
+.extra-section h2 {
+    color: #e72aff;
+    font-family: 'Chiller', fantasy;
+    font-size: 45px;
+    letter-spacing: 3px;
+
+    text-shadow: 0 0 15px #ae00ff;
+}
+
+.extra-section p {
+    margin-top: 20px;
+    font-size: 19px;
+    color: #ddd;
+}
+
+/* =================================
+   MENÚ DESPLEGABLE
+================================= */
+
+.top-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-53%, -50%);
+
+    z-index: 5;
+}
+
+.nav-option {
+    background: transparent;
+    border: none;
+    color: white;
+
+    padding: 12px 15px;
+
+    font-family: 'Russo One', sans-serif;
+    font-size: 23px;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.nav-option:hover,
+.nav-option.active {
+    color: #ed35ff;
+    text-shadow: 0 0 12px #d000ff;
+}
+
+/* VENTANA DESPLEGABLE */
+
+.mega-menu {
+    position: absolute;
+    top: 72px;
+    left: 0;
+
+    width: 100%;
+    min-height: 300px;
+
+    padding: 45px 7% 40px;
+
+    background: rgba(8, 2, 17, 0.97);
+
+    border-bottom: 3px solid #b000ff;
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.8),
+        0 8px 30px rgba(160, 0, 255, 0.3);
+
+    backdrop-filter: blur(12px);
+
+    z-index: 15;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transform: translateY(-35px) scaleY(0.92);
+    transform-origin: top center;
+
+    transition:
+        opacity 0.4s ease,
+        transform 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+        visibility 0.65s;
+}
+
+.mega-menu.show {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+
+    transform: translateY(0) scaleY(1);
+}
+
+/* CONTENIDO DEL MENÚ */
+
+.mega-panel {
+    display: none;
+    text-align: center;
+}
+
+.mega-panel.active {
+    display: block;
+    animation: contentAppear 0.65s ease both;
+}
+
+@keyframes contentAppear {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.mega-panel h2 {
+    color: #e64aff;
+    font-family: 'Bangers', cursive;
+    font-size: 42px;
+    letter-spacing: 3px;
+
+    text-shadow: 0 0 15px #a000ff;
+}
+
+.panel-subtitle {
+    color: #bca2ce;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 13px;
+    letter-spacing: 3px;
+
+    margin-top: 8px;
+    margin-bottom: 30px;
+}
+
+/* BOTÓN CERRAR */
+
+.mega-close {
+    position: absolute;
+    top: 15px;
+    right: 30px;
+
+    color: white;
+    background: transparent;
+    border: none;
+
+    font-size: 25px;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.mega-close:hover {
+    color: #ed20ff;
+    transform: rotate(90deg);
+}
+
+/* =================================
+   CREADORES
+================================= */
+
+.creator-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 180px);
+    justify-content: center;
+    gap: 30px;
+}
+
+.creator-card {
+    padding: 15px;
+
+    background: rgba(35, 8, 54, 0.8);
+    border: 1px solid #8d20d6;
+
+    transition: 0.3s;
+}
+
+.creator-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 20px #a000ff;
+}
+
+.creator-card img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+
+    border: 2px solid #c42aff;
+}
+
+.creator-card h3 {
+    color: #e7a0ff;
+    font-family: 'Bangers', cursive;
+    font-size: 23px;
+
+    margin-top: 10px;
+}
+
+.creator-card p {
+    color: #ddd;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 14px;
+
+    margin-top: 5px;
+}
+
+/* =================================
+   INFORMACIÓN
+================================= */
+
+.info-content {
+    max-width: 700px;
+    margin: auto;
+
+    padding: 20px;
+
+    background: rgba(35, 8, 54, 0.6);
+    border-left: 3px solid #bc27ff;
+}
+
+.info-content p {
+    color: #eee;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 19px;
+
+    margin: 12px 0;
+}
+
+/* =================================
+   TABLETS
+================================= */
+
+@media (max-width: 1000px) {
+
+    .nav-links {
+        gap: 18px;
+    }
+
+    .brand {
+        font-size: 24px;
+    }
+
+    .top-nav {
+        gap: 2px;
+    }
+
+    .nav-option {
+        padding: 10px 7px;
+        font-size: 19px;
+    }
+
+    .chain-left,
+    .chain-right {
+        width: 25vw;
+    }
+
+    .features {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .feature-card img {
+        width: 125px;
+        height: 105px;
+    }
+}
+
+/* =================================
+   CELULARES
+================================= */
+
+@media (max-width: 700px) {
+
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 72px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 190px 0 6%;
+
+    z-index: 20;
+
+    background: rgba(5, 2, 12, 0.94);
+    border-bottom: 3px solid #a900ff;
+    box-shadow: 0 5px 25px rgba(174, 0, 255, 0.35);
+    overflow: visible;
+}
+
+    .brand {
+        font-size: 23px;
+    }
+
+    .brand-icon {
+        font-size: 30px;
+    }
+
+    .menu-toggle {
+        display: block;
+        position: relative;
+        z-index: 6;
+    }
+
+    .roblox-button {
+        display: none;
+    }
+
+    .nav-links {
+        display: none;
+
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+
+        flex-direction: column;
+        gap: 0;
+
+        background: rgba(7, 0, 15, 0.98);
+        border-bottom: 2px solid #d000ff;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links a {
+        width: 100%;
+        text-align: center;
+        padding: 17px;
+        border-bottom: 1px solid #3a124a;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+        padding-bottom: 17px;
+    }
+
+    .hero {
+        min-height: 100vh;
+        height: auto;
+        background-position: center;
+    }
+
+    .hero-content {
+        padding-top: 110px;
+        padding-bottom: 65px;
+    }
+
+    .logo-container {
+        width: min(650px, 85vw);
+    }
+
+    .tagline {
+        font-size: 17px;
+        gap: 8px;
+    }
+
+    .play-button {
+        font-size: 25px;
+        padding: 14px 30px;
+    }
+
+    .side-text {
+        display: none;
+    }
+
+    .features {
+        width: 90%;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        margin-top: 40px;
+    }
+
+    .feature-card img {
+        width: 115px;
+        height: 100px;
+    }
+
+    .extra-section h2 {
+        font-size: 35px;
+    }
+
+    .top-nav {
+        display: none;
+
+        position: absolute;
+        top: 65px;
+        left: 0;
+
+        width: 100%;
+
+        flex-direction: column;
+
+        background: rgba(7, 0, 15, 0.98);
+        border-bottom: 2px solid #d000ff;
+    }
+
+    .top-nav.show {
+        display: flex;
+    }
+
+    .nav-option {
+        width: 100%;
+        padding: 15px;
+        font-size: 21px;
+
+        border-bottom: 1px solid #351044;
+    }
+
+    .chain-left,
+    .chain-right {
+        width: 30vw;
+        top: 15px;
+    }
+
+    .mega-menu {
+        top: 65px;
+        padding: 45px 15px 30px;
+    }
+
+    .mega-panel h2 {
+        font-size: 32px;
+    }
+
+    .creator-grid {
+        grid-template-columns: repeat(2, minmax(0, 140px));
+        gap: 12px;
+    }
+
+    .creator-card {
+        padding: 8px;
+    }
+
+    .creator-card h3 {
+        font-size: 19px;
+    }
+
+    .info-content p {
+        font-size: 16px;
+    }
+}
+
+/* =================================
+   CELULARES PEQUEÑOS
+================================= */
+
+@media (max-width: 380px) {
+
+    .tagline {
+        font-size: 14px;
+        gap: 5px;
+    }
+
+    .features {
+        gap: 12px;
+    }
+
+    .feature-card img {
+        width: 100px;
+        height: 90px;
+    }
+
+    .feature-card span {
+        font-size: 14px;
+    }
+}
+
+/* =================================
+   SECCIÓN ¿DE QUÉ TRATA?
+================================= */
+
+.about-section {
+    width: 100%;
+    min-height: 650px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 80px 8%;
+
+    background-image:
+        url("img/selector/Fondo4.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    border-top: 50px solid #000;
+}
+
+.about-container {
+    width: 100%;
+    max-width: 1250px;
+
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+
+    align-items: center;
+    gap: 80px;
+}
+
+/* TÍTULO IZQUIERDO */
+
+.about-title h2 {
+    font-family: 'Russo One', sans-serif;
+    font-size: clamp(100px, 7px, 100px);
+
+    color: rgb(105, 103, 105);
+    line-height: 1.05;
+    letter-spacing: 3px;
+}
+
+/* DESCRIPCIÓN DERECHA */
+
+.about-description {
+    padding: 10px;
+
+    background: rgba(8, 3, 14, 0.65);
+
+    border-left: 4px solid #b000ff;
+
+    backdrop-filter: blur(5px);
+}
+
+.about-description p {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 21px;
+    line-height: 1.7;
+
+    color: white;
+
+    margin-bottom: 20px;
+}
+
+.about-description p:last-child {
+    margin-bottom: 0;
+}
+
+/* CELULARES */
+
+@media (max-width: 700px) {
+
+    .about-section {
+        min-height: 100vh;
+        padding: 80px 7%;
+    }
+
+    .about-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .about-title h2 {
+        font-size: 55px;
+        text-align: center;
+    }
+
+    .about-description {
+        padding: 20px;
+    }
+
+    .about-description p {
+        font-size: 17px;
+    }
+
+}
+
+/* =================================
+   ASISTENTE DE BIENVENIDA DESTKARD
+================================= */
+
+.asistente-destkard {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+
+    z-index: 1000;
+
+    animation: entradaAsistente 0.9s ease both;
+}
+
+.asistente-destkard img {
+    width: 220px;
+    max-height: 320px;
+
+    object-fit: contain;
+
+    filter: drop-shadow(0 0 12px #a900ff);
+
+    animation: flotarAsistente 3s ease-in-out infinite;
+}
+
+.globo-dialogo {
+    position: relative;
+
+    width: 280px;
+    padding: 20px;
+
+    background: rgba(13, 3, 25, 0.96);
+
+    border: 2px solid #b000ff;
+    border-radius: 14px;
+
+    box-shadow: 0 0 20px rgba(174, 0, 255, 0.4);
+
+    margin-bottom: 25px;
+}
+
+.globo-dialogo::before {
+    content: "";
+
+    position: absolute;
+    left: -12px;
+    bottom: 25px;
+
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-right: 12px solid #b000ff;
+}
+
+.globo-dialogo h3 {
+    color: #e82aff;
+    font-family: 'Bangers', cursive;
+    font-size: 23px;
+
+    margin-bottom: 10px;
+    padding-right: 15px;
+}
+
+.globo-dialogo p {
+    color: white;
+    font-family: 'Roboto Condensed', sans-serif;
+
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+#cerrarDialogo {
+    position: absolute;
+    top: 7px;
+    right: 10px;
+
+    background: transparent;
+    border: none;
+
+    color: white;
+    font-size: 23px;
+
+    cursor: pointer;
+}
+
+#cerrarDialogo:hover {
+    color: #e82aff;
+}
+
+.dialogo-reabrir {
+    display: none;
+
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+
+    z-index: 1000;
+
+    padding: 12px 18px;
+
+    background: #26003d;
+    color: white;
+
+    border: 2px solid #b000ff;
+    border-radius: 10px;
+
+    font-family: 'Bangers', cursive;
+    font-size: 18px;
+
+    cursor: pointer;
+    box-shadow: 0 0 15px #8500cc;
+}
+
+.dialogo-reabrir:hover {
+    transform: scale(1.05);
+}
+
+/* ANIMACIONES */
+
+@keyframes entradaAsistente {
+    from {
+        opacity: 0;
+        transform: translateX(-120%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes flotarAsistente {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+}
+
+/* CERRAR ASISTENTE */
+
+.asistente-destkard.oculto {
+    display: none;
+}
+
+/* ADAPTACIÓN A CELULARES */
+
+@media (max-width: 700px) {
+
+    .asistente-destkard {
+        left: 8px;
+        bottom: 10px;
+        gap: 5px;
+    }
+
+    .asistente-destkard img {
+        width: 95px;
+        max-height: 145px;
+    }
+
+    .globo-dialogo {
+        width: min(230px, 62vw);
+        padding: 14px;
+        margin-bottom: 12px;
+    }
+
+    .globo-dialogo h3 {
+        font-size: 19px;
+    }
+
+    .globo-dialogo p {
+        font-size: 14px;
+    }
+
+    .dialogo-reabrir {
+        left: 10px;
+        bottom: 10px;
+        font-size: 16px;
+    }
+
+}
+
+/* =================================
+   PRESENTACIÓN CON DOS PERSONAJES
+================================= */
+
+/* SEGUNDO PERSONAJE A LA DERECHA */
+
+.asistente-destkard.derecha {
+    left: auto;
+    right: 20px;
+    flex-direction: row-reverse;
+    animation: entradaAsistenteDerecha 0.9s ease both;
+}
+
+/* GLOBITO DEL LADO DERECHO */
+
+.asistente-destkard.derecha .globo-dialogo::before {
+    display: none;
+}
+
+.asistente-destkard.derecha .globo-dialogo::after {
+    content: "";
+    position: absolute;
+    right: -12px;
+    bottom: 25px;
+
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-left: 12px solid #b000ff;
+}
+
+/* ENTRADA DESDE LA DERECHA */
+
+@keyframes entradaAsistenteDerecha {
+
+    from {
+        opacity: 0;
+        transform: translateX(120%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+/* CELULARES */
+
+@media (max-width: 700px) {
+
+    .asistente-destkard.derecha {
+        left: auto;
+        right: 8px;
+        flex-direction: row-reverse;
+    }
+
+}
+
+/* BOTONES PARA CERRAR LOS DIÁLOGOS */
+
+.cerrarDialogo {
+    background: transparent !important;
+    border: none !important;
+    outline: none;
+    box-shadow: none;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+}
+
+.cerrarDialogo:hover {
+    background: transparent !important;
+    color: #d58aff;
+}
